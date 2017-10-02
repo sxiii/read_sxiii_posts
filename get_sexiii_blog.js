@@ -21,7 +21,7 @@ async function readHistory() {
     let count = 2000;
     
     while(start <= LAST_ID) {
-        console.log("start = " + start + " count = " + count);
+        // console.log("start = " + start + " count = " + count);
         let heArr = await steem.api.getAccountHistoryAsync(USERID, start, count);
         filterAccountHistory(heArr);
         
@@ -80,7 +80,7 @@ async function processTransaction(tr) {
         //Получаем контент
         let content = await steem.api.getContentAsync(opBody.author, opBody.permlink);
         if(content.permlink == opBody.permlink) {
-            console.log(`[${content.title}](https://golos.io/@${content.author}/${content.permlink} | ${content.total_payout_value}`);
+            console.log(`[${content.title}](https://golos.io/@${content.author}/${content.permlink}) | ${content.created} | ${content.pending_payout_value} | ${content.total_pending_payout_value} | ${content.total_payout_value} `);
         }
     }
 }
