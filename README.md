@@ -17,6 +17,6 @@ npm install steem
 
 
 ```
-node get_sexiii_blog.js 
+node get_sxiii_blog.js 
 ```
 
